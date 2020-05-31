@@ -3,11 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile.css" media="screen and (max-width: 500px)">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <title>Task Manager</title>
 </head>
-<body>
-    
+<body onload="getTasks()">
+    <div class="container">
+        <div class="row">
+            <div id="main" class="card">
+                <div class="card-content">
+                    <h2 class="card-title">Add New Task</h2>
+                    <form id="task-form" action="#">
+                        <div class="input-field">
+                            <input type="text" name="task" id="task" placeholder="New Task">
+                        </div>
+                        <input type="submit" value="Add Task" class="btn primary">
+                    </form>
+                </div>
+                <div class="card-action hide">
+                    <h2 class="card-title">Tasks List</h2>
+                    <div class="input-field">
+                        <input type="text" name="filter" id="filter" placeholder="Filter Tasks">
+                    </div>
+                    <ul class="collection"></ul>
+                    <div>
+                        <a href="#" class="btn black clear-tasks">Clear Tasks</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js" async></script>
 </body>
 </html>

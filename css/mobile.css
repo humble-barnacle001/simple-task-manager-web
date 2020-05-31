@@ -1,0 +1,11 @@
+li.collection-item{
+    word-wrap: normal;
+}
+
+li.collection-item .text::-webkit-scrollbar{
+    display: none;
+}
+
+li.collection-item .text{
+    overflow: scroll;
+}

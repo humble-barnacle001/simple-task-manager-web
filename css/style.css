@@ -1,0 +1,135 @@
+:root{
+    --primary: #b3effc;
+    --black: #333;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #f2f2f2;
+}
+
+.container{
+    margin: auto;
+    max-width: 1000px;
+}
+
+.row{
+    display: flex;
+    width: 100%;
+}
+
+.card{
+    z-index: 1;
+    padding: 1rem;
+    margin: auto;
+    margin-top: 1rem;
+    /* width: 300px; */
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: #fff;
+    box-shadow: #999 3px 3px 7px;
+}
+
+.card-content,
+.card-action{
+    width: 300px;
+    padding: 0.5rem 2.2rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.card-content{
+    border-bottom: dotted 1px #ccc;
+}
+
+.input-field input{
+    border: none;
+    border-bottom: 1px solid #666;
+    width: 100%;
+    padding: 0.5rem 0.7rem;
+    margin: 0.5rem 0;
+    background-color: inherit;
+}
+
+.input-field input:focus{
+    outline: transparent;
+}
+
+input[type="submit"]{
+    border-color: transparent;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.btn{
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    margin-top: 1rem;
+    text-transform: uppercase;
+}
+
+.btn:hover{
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.primary{
+    background-color: var(--primary);
+    color: #000;
+}
+
+.black{
+    background-color: var(--black);
+    color: #f4f4f4;
+}
+
+ul.collection{
+    list-style: none;
+    border: 1px #aaa solid;
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+li.collection-item{
+    padding: 0.7rem 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: solid 1px #aaa;
+    word-wrap: break-word;
+    font-weight: 200;
+}
+
+li.collection-item .text{
+    width: 90%;
+    overflow: hidden;
+}
+
+li.collection-item:last-child{
+    border: none;
+}
+
+li.collection-item>a:hover{
+    color: #ff0424;
+}
+
+.card-title{
+    font-size: 2rem;
+    font-weight: 300;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.hide{
+    display: none;
+}
