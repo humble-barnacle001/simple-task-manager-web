@@ -36,7 +36,7 @@ function getTasks(){
                 dispTask.classList.remove('hide');
             }
             taskList.appendChild(li);
-        })
+        });
     }
 }
 
@@ -63,6 +63,8 @@ function addTask(e){
         taskList.appendChild(li);
         localStore(taskInp.value);
         taskInp.value = '';
+        filter.value = '';
+        filterTasks();
     }
 }
 
@@ -72,16 +74,15 @@ function removeTask(e) {
         if(confirm('Are you sure?')){
             const task = e.target.parentElement.parentElement.firstElementChild.textContent;
             let tasks = Array.from(JSON.parse(localStorage.getItem('tasks')));
-            console.log(tasks);
             for(let i = 0; i < tasks.length; i++){
                 if(tasks[i] === task){
                     tasks.splice(i, i+1);
                     break;
                 }
             }
-            console.log(tasks);
             localStorage.setItem('tasks', JSON.stringify(tasks));
             e.target.parentElement.parentElement.remove();
+            filterTasks();
             if(!taskList.firstElementChild){
                 dispTask.classList.add('hide');
             }
@@ -100,8 +101,14 @@ function clearAll(e) {
     }
 }
 
-function filterTasks(e) {
-    const text=e.target.value.toLowerCase();
+function filterTasks() {
+    const text=filter.value.toLowerCase();
+    if(text === ''){
+        clearBtn.classList.remove('hide');
+    }
+    else{
+        clearBtn.classList.add('hide');
+    }
     let ct = 0;
     Array.from(taskList.children).forEach(task => {
         const item = task.firstElementChild.textContent;
@@ -113,11 +120,11 @@ function filterTasks(e) {
             task.style.display = 'none';
         }
     });
-    if(ct==0 && e.target.value.length>0){
-        e.target.parentElement.nextElementSibling.classList.remove('hide');
+    if(ct==0){
+        filter.parentElement.nextElementSibling.classList.remove('hide');
     }
     else{
-         e.target.parentElement.nextElementSibling.classList.add('hide');
+         filter.parentElement.nextElementSibling.classList.add('hide');
     }
 }
 
