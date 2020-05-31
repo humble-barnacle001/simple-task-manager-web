@@ -1,3 +1,23 @@
+/* body{
+    min-height: 200vh;
+    max-width: 100%;
+}
+
+.container{
+    max-width: 300px;
+    overflow: hidden;
+}
+
+.card{
+    max-width: 300px;
+}
+
+.card-content,
+.card-action{
+    width: 200px;
+    padding: 0.5rem 0.2rem 2rem;
+} */
+
 li.collection-item{
     word-wrap: normal;
 }

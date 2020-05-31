@@ -114,10 +114,11 @@ function filterTasks(e) {
         }
     });
     if(ct==0 && e.target.value.length>0){
-        alert('No task found');
-        e.target.value = text.substring(0,text.length-1);
-        filterTasks(e);
-    } 
+        e.target.parentElement.nextElementSibling.classList.remove('hide');
+    }
+    else{
+         e.target.parentElement.nextElementSibling.classList.add('hide');
+    }
 }
 
 
