@@ -67,6 +67,7 @@ function addTask(e){
 }
 
 function removeTask(e) {
+    e.preventDefault();
     if(e.target.parentElement.classList.contains('delete-item')){
         if(confirm('Are you sure?')){
             const task = e.target.parentElement.parentElement.firstElementChild.textContent;
@@ -89,6 +90,7 @@ function removeTask(e) {
 }
 
 function clearAll(e) {
+    e.preventDefault();
     if(confirm('Clear all the tasks?')){
         while(taskList.firstChild){
             taskList.removeChild(taskList.firstChild);
